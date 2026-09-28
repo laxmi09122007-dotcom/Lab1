@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxmi | CSE Student</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1e3a8a;
+            color: white;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #93c5fd;
+        }
+
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+        }
+
+        .hero-content h2 {
+            font-size: 45px;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h3 {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            max-width: 650px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: #1e3a8a;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .btn:hover {
+            background: #2563eb;
+        }
+
+        section {
+            padding: 60px 10%;
+        }
+
+        section h2 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .education-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .skills {
+            background: #eef4ff;
+        }
+
+        .skill-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #1e3a8a;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .contact {
+            background: white;
+            text-align: center;
+        }
+
+        footer {
+            background: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .hero-content h2 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Laxmi</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+
+    <!-- Home Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Hello, I'm Laxmi</h2>
+            <h3>Computer Science Engineering Student</h3>
+
+            <p>
+                I am a 2nd-year CSE student at Jain Institute of Technology,
+                Davangere. I am interested in technology, programming and
+                learning new skills.
+            </p>
+
+            <a href="#about" class="btn">Know More About Me</a>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About Me</h2>
+
+        <div class="about-content">
+            <p>
+                My name is <strong>Laxmi</strong>. I am currently pursuing
+                Computer Science and Engineering at
+                <strong>Jain Institute of Technology, Davangere</strong>.
+            </p>
+
+            <br>
+
+            <p>
+                I was born in <strong>Gulbarga (Kalaburagi)</strong>, Karnataka,
+                and completed my education up to 2nd PUC in Gulbarga.
+                After completing my 2nd PUC, I moved to Davangere to pursue
+                my degree.
+            </p>
+
+            <br>
+
+            <p>
+                I am passionate about learning computer science, improving my
+                programming skills and exploring new technologies.
+            </p>
+        </div>
+    </section>
+
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>My Education</h2>
+
+        <div class="education-container">
+
+            <div class="card">
+                <h3>Engineering</h3>
+                <p>
+                    <strong>Computer Science & Engineering</strong>
+                </p>
+                <p>
+                    Jain Institute of Technology
+                </p>
+                <p>
+                    Davangere, Karnataka
+                </p>
+                <p>
+                    Currently in 2nd Year
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>2nd PUC</h3>
+                <p>
+                    Completed 2nd PUC in
+                    <strong>Gulbarga (Kalaburagi)</strong>.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Hometown</h3>
+                <p>
+                    Born and brought up in
+                    <strong>Gulbarga (Kalaburagi)</strong>,
+                    Karnataka.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+
+        <div class="skill-list">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">C Programming</span>
+            <span class="skill">Java</span>
+            <span class="skill">Python</span>
+            <span class="skill">Problem Solving</span>
+            <span class="skill">Communication</span>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+
+        <p>
+            I would love to connect with fellow students,
+            developers and technology enthusiasts.
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Email:</strong> your-email@example.com
+        </p>
+
+        <p>
+            <strong>Location:</strong> Davangere, Karnataka
+        </p>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; 2026 Laxmi | CSE Student
+        </p>
+    </footer>
+
+</body>
+</html>
