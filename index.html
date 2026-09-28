@@ -3,133 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laxmi | CSE Student</title>
+
+    <title>Laxmi | My Personal Space</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+            font-family: "Segoe UI", sans-serif;
         }
 
         body {
-            background-color: #f4f7fb;
+            background: #fff8f0;
             color: #333;
-            line-height: 1.6;
         }
 
-        header {
-            background: #1e3a8a;
-            color: white;
-            padding: 20px 10%;
+        /* NAVBAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: linear-gradient(90deg, #6a1b9a, #8e24aa, #3949ab);
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.2);
         }
 
-        header h1 {
+        nav h1 {
+            color: #fff;
             font-size: 28px;
         }
 
-        nav a {
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #93c5fd;
+        nav ul li a:hover {
+            color: #ffd54f;
         }
 
+        /* HERO */
         .hero {
-            min-height: 85vh;
+            min-height: 92vh;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 40px 20px;
-            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+
+            background:
+                linear-gradient(
+                    rgba(106, 27, 154, 0.75),
+                    rgba(57, 73, 171, 0.75)
+                ),
+                linear-gradient(135deg, #ffcc80, #ce93d8);
+
+            color: white;
         }
 
-        .hero-content h2 {
-            font-size: 45px;
-            color: #1e3a8a;
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-content .emoji {
+            font-size: 65px;
             margin-bottom: 10px;
         }
 
-        .hero-content h3 {
-            font-size: 24px;
-            color: #444;
-            margin-bottom: 15px;
+        .hero h2 {
+            font-size: 55px;
+            margin-bottom: 10px;
         }
 
-        .hero-content p {
-            max-width: 650px;
-            margin: auto;
-            font-size: 18px;
+        .hero h3 {
+            font-size: 25px;
+            color: #ffe082;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.8;
         }
 
         .btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 12px 25px;
-            background: #1e3a8a;
-            color: white;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: #ffd54f;
+            color: #4a148c;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
         .btn:hover {
-            background: #2563eb;
+            background: white;
+            transform: scale(1.05);
         }
 
+        /* COMMON SECTION */
         section {
-            padding: 60px 10%;
+            padding: 80px 8%;
         }
 
         section h2 {
             text-align: center;
-            color: #1e3a8a;
-            margin-bottom: 30px;
-            font-size: 32px;
+            font-size: 38px;
+            margin-bottom: 45px;
+            color: #6a1b9a;
         }
 
+        /* ABOUT */
         .about {
-            background: white;
+            background: #fff;
         }
 
-        .about-content {
-            max-width: 800px;
+        .about-container {
+            max-width: 900px;
             margin: auto;
             text-align: center;
             font-size: 18px;
+            line-height: 1.9;
         }
 
-        .education-container {
+        .highlight {
+            color: #8e24aa;
+            font-weight: bold;
+        }
+
+        /* EDUCATION */
+        .education {
+            background: linear-gradient(135deg, #f3e5f5, #e8eaf6);
+        }
+
+        .cards {
             display: flex;
             justify-content: center;
-            gap: 25px;
             flex-wrap: wrap;
+            gap: 30px;
         }
 
         .card {
-            background: white;
             width: 300px;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
             text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            color: #1e3a8a;
-            margin-bottom: 10px;
+            color: #6a1b9a;
+            margin-bottom: 12px;
         }
 
+        /* KRISHNA */
+        .krishna {
+            background: linear-gradient(135deg, #4a148c, #1a237e);
+            color: white;
+            text-align: center;
+        }
+
+        .krishna h2 {
+            color: #ffd54f;
+        }
+
+        .krishna-content {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .krishna-symbol {
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+
+        .krishna p {
+            font-size: 20px;
+            line-height: 1.9;
+        }
+
+        .quote {
+            margin-top: 25px;
+            font-style: italic;
+            color: #ffe082;
+            font-size: 21px;
+        }
+
+        /* HOBBIES */
+        .hobbies {
+            background: #fff8e1;
+        }
+
+        .hobby-card {
+            width: 250px;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 20px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .hobby-card:hover {
+            transform: scale(1.06);
+        }
+
+        .hobby-card .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .music {
+            background: linear-gradient(135deg, #ec407a, #ab47bc);
+        }
+
+        .nature {
+            background: linear-gradient(135deg, #43a047, #00897b);
+        }
+
+        .space {
+            background: linear-gradient(135deg, #3949ab, #1a237e);
+        }
+
+        .learning {
+            background: linear-gradient(135deg, #fb8c00, #f4511e);
+        }
+
+        /* SKILLS */
         .skills {
-            background: #eef4ff;
+            background: #f5f5f5;
         }
 
         .skill-list {
@@ -140,36 +267,72 @@
         }
 
         .skill {
-            background: #1e3a8a;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: linear-gradient(90deg, #7b1fa2, #3949ab);
             color: white;
-            padding: 10px 20px;
-            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
+        .skill:hover {
+            transform: scale(1.08);
+            background: linear-gradient(90deg, #ff8f00, #e91e63);
+        }
+
+        /* CONTACT */
         .contact {
-            background: white;
+            background: linear-gradient(135deg, #fce4ec, #ede7f6);
             text-align: center;
         }
 
+        .contact p {
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        .contact a {
+            color: #6a1b9a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
         footer {
-            background: #1e3a8a;
+            background: #311b92;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 25px;
         }
 
+        footer p {
+            margin: 5px;
+        }
+
+        /* MOBILE */
         @media (max-width: 768px) {
-            header {
+
+            nav {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
             }
 
-            nav a {
-                margin: 0 8px;
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
 
-            .hero-content h2 {
-                font-size: 35px;
+            .hero h2 {
+                font-size: 40px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 60px 5%;
             }
         }
     </style>
@@ -177,115 +340,255 @@
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Laxmi</h1>
+    <!-- NAVIGATION -->
+    <nav>
+        <h1>💜 Laxmi</h1>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#krishna">My Faith</a></li>
+            <li><a href="#hobbies">My World</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
 
 
-    <!-- Home Section -->
+    <!-- HOME -->
     <section class="hero" id="home">
+
         <div class="hero-content">
+
+            <div class="emoji">🦋</div>
+
             <h2>Hello, I'm Laxmi</h2>
-            <h3>Computer Science Engineering Student</h3>
+
+            <h3>Computer Science Engineering Student 💻</h3>
 
             <p>
-                I am a 2nd-year CSE student at Jain Institute of Technology,
-                Davangere. I am interested in technology, programming and
-                learning new skills.
+                Welcome to my little corner of the internet.
+                I am a 2nd-year CSE student who loves technology,
+                music, nature, peaceful moments and my own space.
             </p>
 
-            <a href="#about" class="btn">Know More About Me</a>
+            <a href="#about" class="btn">
+                Explore My World ✨
+            </a>
+
         </div>
+
     </section>
 
 
-    <!-- About Section -->
+    <!-- ABOUT -->
     <section class="about" id="about">
-        <h2>About Me</h2>
 
-        <div class="about-content">
+        <h2>🌸 About Me</h2>
+
+        <div class="about-container">
+
             <p>
-                My name is <strong>Laxmi</strong>. I am currently pursuing
-                Computer Science and Engineering at
-                <strong>Jain Institute of Technology, Davangere</strong>.
+                Hi! My name is
+                <span class="highlight">Laxmi</span>.
+                I am currently pursuing my
+                <span class="highlight">
+                    2nd year Computer Science and Engineering
+                </span>
+                degree at
+                <span class="highlight">
+                    Jain Institute of Technology, Davangere
+                </span>.
             </p>
 
             <br>
 
             <p>
-                I was born in <strong>Gulbarga (Kalaburagi)</strong>, Karnataka,
-                and completed my education up to 2nd PUC in Gulbarga.
-                After completing my 2nd PUC, I moved to Davangere to pursue
-                my degree.
+                I was born in
+                <span class="highlight">Gulbarga (Kalaburagi)</span>,
+                Karnataka. I completed my education up to
+                <span class="highlight">2nd PUC in Gulbarga</span>.
+                After completing my PUC, I moved to
+                <span class="highlight">Davangere</span>
+                to pursue my degree.
             </p>
 
             <br>
 
             <p>
-                I am passionate about learning computer science, improving my
-                programming skills and exploring new technologies.
+                I believe life is about learning, growing,
+                finding peace and enjoying the little things
+                that make us happy. 🌷
             </p>
+
         </div>
+
     </section>
 
 
-    <!-- Education Section -->
-    <section id="education">
-        <h2>My Education</h2>
+    <!-- EDUCATION -->
+    <section class="education" id="education">
 
-        <div class="education-container">
+        <h2>🎓 My Education</h2>
 
-            <div class="card">
-                <h3>Engineering</h3>
-                <p>
-                    <strong>Computer Science & Engineering</strong>
-                </p>
-                <p>
-                    Jain Institute of Technology
-                </p>
-                <p>
-                    Davangere, Karnataka
-                </p>
-                <p>
-                    Currently in 2nd Year
-                </p>
-            </div>
+        <div class="cards">
 
             <div class="card">
-                <h3>2nd PUC</h3>
+                <div class="icon">🏫</div>
+
+                <h3>School & PUC</h3>
+
                 <p>
-                    Completed 2nd PUC in
+                    Completed my schooling and
+                    2nd PUC in
                     <strong>Gulbarga (Kalaburagi)</strong>.
                 </p>
             </div>
 
+
             <div class="card">
-                <h3>Hometown</h3>
+
+                <div class="icon">💻</div>
+
+                <h3>Engineering</h3>
+
                 <p>
-                    Born and brought up in
-                    <strong>Gulbarga (Kalaburagi)</strong>,
-                    Karnataka.
+                    Currently pursuing
+                    <strong>
+                        Computer Science & Engineering
+                    </strong>
+                    at Jain Institute of Technology,
+                    Davangere.
                 </p>
             </div>
 
+
+            <div class="card">
+
+                <div class="icon">🌱</div>
+
+                <h3>Current Journey</h3>
+
+                <p>
+                    I am currently in my
+                    <strong>2nd year</strong>
+                    and continuously learning
+                    new technologies and skills.
+                </p>
+
+            </div>
+
         </div>
+
     </section>
 
 
-    <!-- Skills Section -->
+    <!-- KRISHNA -->
+    <section class="krishna" id="krishna">
+
+        <h2>🦚 My Faith</h2>
+
+        <div class="krishna-content">
+
+            <div class="krishna-symbol">
+                🦚 💙 🪈
+            </div>
+
+            <p>
+                I am a devotee of
+                <strong>Lord Krishna</strong>.
+                His teachings, presence and the peace
+                associated with devotion are very special
+                to me.
+            </p>
+
+            <p class="quote">
+                "Where there is Krishna, there is peace."
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOBBIES -->
+    <section class="hobbies" id="hobbies">
+
+        <h2>🌈 Things I Love</h2>
+
+        <div class="cards">
+
+            <div class="hobby-card music">
+
+                <div class="icon">🎧</div>
+
+                <h3>Music</h3>
+
+                <p>
+                    I love listening to songs.
+                    Music is one of my favorite ways
+                    to relax and enjoy my time.
+                </p>
+
+            </div>
+
+
+            <div class="hobby-card nature">
+
+                <div class="icon">🌿</div>
+
+                <h3>Nature</h3>
+
+                <p>
+                    I love the beauty of nature —
+                    greenery, peaceful places,
+                    sunsets and fresh air.
+                </p>
+
+            </div>
+
+
+            <div class="hobby-card space">
+
+                <div class="icon">🌙</div>
+
+                <h3>My Own Space</h3>
+
+                <p>
+                    I love having my own space,
+                    enjoying peaceful moments and
+                    spending time with myself.
+                </p>
+
+            </div>
+
+
+            <div class="hobby-card learning">
+
+                <div class="icon">📚</div>
+
+                <h3>Learning</h3>
+
+                <p>
+                    As a CSE student, I enjoy learning
+                    about computers, programming and
+                    new technologies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
     <section class="skills" id="skills">
-        <h2>My Skills</h2>
+
+        <h2>💻 My Skills</h2>
 
         <div class="skill-list">
+
             <span class="skill">HTML</span>
             <span class="skill">CSS</span>
             <span class="skill">C Programming</span>
@@ -293,36 +596,55 @@
             <span class="skill">Python</span>
             <span class="skill">Problem Solving</span>
             <span class="skill">Communication</span>
+            <span class="skill">Learning</span>
+
         </div>
+
     </section>
 
 
-    <!-- Contact Section -->
+    <!-- CONTACT -->
     <section class="contact" id="contact">
-        <h2>Contact Me</h2>
+
+        <h2>💌 Let's Connect</h2>
 
         <p>
-            I would love to connect with fellow students,
-            developers and technology enthusiasts.
-        </p>
-
-        <br>
-
-        <p>
-            <strong>Email:</strong> your-email@example.com
+            Thank you for visiting my personal website! 🌸
         </p>
 
         <p>
-            <strong>Location:</strong> Davangere, Karnataka
+            <strong>📍 Currently:</strong>
+            Davangere, Karnataka
         </p>
+
+        <p>
+            <strong>🏡 From:</strong>
+            Gulbarga (Kalaburagi), Karnataka
+        </p>
+
+        <p>
+            <strong>📧 Email:</strong>
+            <a href="mailto:your-email@example.com">
+                your-email@example.com
+            </a>
+        </p>
+
     </section>
 
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
+
+        <p>💜 Made with love by Laxmi</p>
+
         <p>
-            &copy; 2026 Laxmi | CSE Student
+            🦚 Hare Krishna | 🌿 Love Nature | 🎧 Love Music
         </p>
+
+        <p>
+            &copy; 2026 Laxmi. All Rights Reserved.
+        </p>
+
     </footer>
 
 </body>
